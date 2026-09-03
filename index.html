@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>Carregando...</title>
+  <meta name="description" content="">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link id="google-fonts" rel="stylesheet" href="">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header" data-section="header">
+    <div class="container header__inner">
+      <a href="#" class="header__logo" aria-label="Início">
+        <img src="" alt="" class="header__logo-img" id="header-logo">
+        <span class="header__logo-text" id="header-logo-text"></span>
+      </a>
+      <nav class="header__nav" id="header-nav" aria-label="Menu principal"></nav>
+      <div class="header__actions">
+        <a href="#" class="btn btn--sm btn--whatsapp header__cta" id="header-whatsapp" data-whatsapp-context="header">
+          WhatsApp
+        </a>
+        <button class="header__menu-btn" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu mobile (fora do header para não vazar no layout) -->
+  <div class="mobile-menu-overlay" id="mobile-menu-overlay" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile" aria-hidden="true"></nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero" data-section="hero">
+      <div class="hero__bg">
+        <picture>
+          <source media="(max-width: 768px)" srcset="" id="hero-img-mobile">
+          <img src="" alt="" class="hero__img" id="hero-img" fetchpriority="high">
+        </picture>
+        <div class="hero__overlay"></div>
+      </div>
+      <div class="hero__center">
+      <div class="container hero__content">
+        <div class="hero__badges" id="hero-badges"></div>
+        <h1 class="hero__title" id="hero-title"></h1>
+        <p class="hero__subtitle" id="hero-subtitle"></p>
+
+        <!-- Card de reserva -->
+        <form class="booking-card hidden" id="booking-card" novalidate>
+          <div class="booking-card__fields">
+            <div class="booking-field" data-booking-field="room">
+              <button type="button" class="booking-field__trigger" aria-expanded="false" aria-haspopup="listbox">
+                <span class="booking-field__label" id="booking-label-room">Tipo de reserva</span>
+                <span class="booking-field__value is-placeholder" id="booking-room-display">Selecione o quarto</span>
+                <svg class="booking-field__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="booking-popover" id="booking-popover-room" hidden>
+                <p class="booking-popover__title">Selecione sua escolha</p>
+                <ul class="booking-popover__list" id="booking-room-list" role="listbox"></ul>
+              </div>
+              <input type="hidden" id="booking-room" required>
+            </div>
+
+            <div class="booking-field" data-booking-field="checkin">
+              <button type="button" class="booking-field__trigger" aria-expanded="false">
+                <span class="booking-field__label" id="booking-label-checkin">Data de entrada</span>
+                <span class="booking-field__value is-placeholder" id="booking-checkin-display">Adicione uma data</span>
+                <svg class="booking-field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </button>
+              <div class="booking-popover booking-calendar" id="booking-popover-checkin" hidden></div>
+              <input type="hidden" id="booking-checkin" required>
+            </div>
+
+            <div class="booking-field" data-booking-field="checkout">
+              <button type="button" class="booking-field__trigger" aria-expanded="false">
+                <span class="booking-field__label" id="booking-label-checkout">Data de saída</span>
+                <span class="booking-field__value is-placeholder" id="booking-checkout-display">Adicione uma data</span>
+                <svg class="booking-field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </button>
+              <div class="booking-popover booking-calendar" id="booking-popover-checkout" hidden></div>
+              <input type="hidden" id="booking-checkout" required>
+            </div>
+
+            <div class="booking-field" data-booking-field="guests">
+              <button type="button" class="booking-field__trigger" aria-expanded="false">
+                <span class="booking-field__label" id="booking-label-guests">Hóspedes</span>
+                <span class="booking-field__value" id="booking-guests-display">2 hóspedes</span>
+                <svg class="booking-field__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="booking-popover" id="booking-popover-guests" hidden>
+                <p class="booking-popover__title">Selecione sua escolha</p>
+                <div class="booking-stepper">
+                  <span class="booking-stepper__label">Adultos</span>
+                  <div class="booking-stepper__controls">
+                    <button type="button" class="booking-stepper__btn" id="booking-guests-minus" aria-label="Menos hóspedes">−</button>
+                    <span class="booking-stepper__count" id="booking-guests-count">2</span>
+                    <button type="button" class="booking-stepper__btn" id="booking-guests-plus" aria-label="Mais hóspedes">+</button>
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" id="booking-guests" value="2" required>
+            </div>
+          </div>
+
+          <button type="submit" class="booking-card__submit btn btn--whatsapp" id="booking-submit">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span id="booking-submit-text">Consultar no WhatsApp</span>
+          </button>
+        </form>
+
+        <div class="hero__ctas">
+          <a href="#" class="btn btn--lg btn--whatsapp" id="hero-cta" data-whatsapp-context="hero"></a>
+          <a href="#" class="btn btn--lg btn--outline" id="hero-phone-cta"></a>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="trust-bar" id="trust-bar" data-section="trustBar">
+      <div class="container">
+        <div class="trust-bar__grid" id="trust-bar-content"></div>
+      </div>
+    </section>
+
+    <!-- QUARTOS / SUÍTES -->
+    <section class="section rooms" id="quartos" data-section="rooms">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="rooms-title">Nossos Quartos</h2>
+          <p class="section__subtitle" id="rooms-subtitle">Escolha a acomodação ideal para sua estadia</p>
+        </div>
+        <div class="rooms__grid" id="rooms-grid"></div>
+      </div>
+    </section>
+
+    <!-- COMODIDADES -->
+    <section class="section amenities" id="comodidades" data-section="amenities">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Comodidades</h2>
+          <p class="section__subtitle">Tudo para uma estadia confortável</p>
+        </div>
+        <div class="amenities__grid" id="amenities-grid"></div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section about" id="sobre" data-section="about">
+      <div class="container about__inner">
+        <div class="about__image-wrap">
+          <img src="" alt="" class="about__image" id="about-image" loading="lazy">
+        </div>
+        <div class="about__content">
+          <h2 class="section__title" id="about-title"></h2>
+          <div class="about__text" id="about-text"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GASTRONOMIA -->
+    <section class="section gastronomy" id="gastronomia" data-section="gastronomy">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="gastronomy-title">Gastronomia</h2>
+          <p class="section__subtitle" id="gastronomy-subtitle"></p>
+        </div>
+        <div class="gastronomy__feature" id="gastronomy-feature"></div>
+        <div class="gastronomy__grid" id="gastronomy-grid"></div>
+      </div>
+    </section>
+
+    <!-- DECORAÇÕES -->
+    <section class="section decorations" id="decoracoes" data-section="decorations">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="decorations-title">Decorações</h2>
+          <p class="section__subtitle" id="decorations-subtitle"></p>
+        </div>
+        <p class="decorations__intro" id="decorations-description"></p>
+        <div class="decorations__grid" id="decorations-grid"></div>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="section gallery" id="galeria" data-section="gallery">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="gallery-title">Galeria</h2>
+        </div>
+        <div class="gallery__grid" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <!-- PROMOÇÕES / VANTAGENS -->
+    <section class="section promotions" id="promocoes" data-section="promotions">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="promotions-title">Promoções</h2>
+        </div>
+        <div class="promotions__grid" id="promotions-grid"></div>
+      </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section class="section location" id="localizacao" data-section="location">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="location-title">Localização</h2>
+          <p class="section__subtitle" id="location-description"></p>
+        </div>
+        <div class="location__inner">
+          <div class="location__map" id="location-map"></div>
+          <div class="location__info">
+            <address class="location__address" id="location-address"></address>
+            <ul class="location__nearby" id="location-nearby"></ul>
+            <div class="location__actions">
+              <a href="#" class="btn btn--primary" id="location-directions" target="_blank" rel="noopener">
+                Como chegar
+              </a>
+              <a href="#" class="btn btn--uber hidden" id="location-uber" target="_blank" rel="noopener">
+                Ir de Uber
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVALIAÇÕES -->
+    <section class="section reviews" id="avaliacoes" data-section="reviews">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="reviews-title">Avaliações</h2>
+        </div>
+        <div class="reviews__grid" id="reviews-grid"></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq" data-section="faq">
+      <div class="container container--narrow">
+        <div class="section__header">
+          <h2 class="section__title" id="faq-title">Perguntas frequentes</h2>
+        </div>
+        <div class="faq__list" id="faq-list"></div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final" id="contato" data-section="ctaFinal">
+      <div class="cta-final__bg">
+        <img src="" alt="" class="cta-final__img" id="cta-final-bg" loading="lazy">
+        <div class="cta-final__overlay"></div>
+      </div>
+      <div class="container cta-final__content">
+        <h2 class="cta-final__title" id="cta-final-title"></h2>
+        <p class="cta-final__subtitle" id="cta-final-subtitle"></p>
+        <div class="cta-final__actions">
+          <a href="#" class="btn btn--lg btn--whatsapp" id="cta-final-whatsapp" data-whatsapp-context="footer"></a>
+          <a href="#" class="btn btn--lg btn--outline-light" id="cta-final-phone"></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer" data-section="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="" alt="" class="footer__logo" id="footer-logo">
+          <p class="footer__tagline" id="footer-tagline"></p>
+        </div>
+        <div class="footer__contact">
+          <h3 class="footer__heading">Contato</h3>
+          <ul class="footer__list" id="footer-contact"></ul>
+        </div>
+        <div class="footer__hours">
+          <h3 class="footer__heading">Horários</h3>
+          <ul class="footer__list" id="footer-hours"></ul>
+        </div>
+        <div class="footer__social" id="footer-social-wrap">
+          <h3 class="footer__heading">Redes sociais</h3>
+          <div class="footer__social-links" id="footer-social"></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="footer-year"></span> <span id="footer-name"></span>. Todos os direitos reservados.</p>
+        <p class="footer__powered">Desenvolvido por <a href="#" rel="noopener">Tapir LP</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="#" class="whatsapp-float" id="whatsapp-float" aria-label="Falar no WhatsApp" data-whatsapp-context="float">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="whatsapp-float__text" id="whatsapp-float-text">WhatsApp</span>
+  </a>
+
+  <!-- STICKY BAR MOBILE (desativado — usar apenas botão flutuante) -->
+  <div class="sticky-bar hidden" id="sticky-bar" aria-hidden="true">
+    <a href="#" class="btn btn--whatsapp btn--block" id="sticky-whatsapp" data-whatsapp-context="sticky">
+      Reservar pelo WhatsApp
+    </a>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Fechar">&times;</button>
+    <img src="" alt="" class="lightbox__img" id="lightbox-img">
+  </div>
+
+  <script src="js/icons.js"></script>
+  <script>window.HOTEL_CONFIG = {"meta":{"slug":"motel-scala","language":"pt-BR","version":"1.0.0"},"hotel":{"name":"Motel Scala","tagline":"Chama o mozão e bora pro Motel Scala","city":"Salvador","state":"BA","neighborhood":"Comércio","address":"Av. Frederico Pontes (1ª travessa da Frederico Pontes nº 62)","zipCode":"40015-140","phone":"(71) 3416-5000","whatsapp":"5571982178752","email":"financeiro@motelscala.com.br","website":"https://www.motelscala.com.br","instagram":"https://www.instagram.com/motel_scala/","facebook":"https://www.facebook.com/motelscala","logo":"assets/images/logo.svg","logoAlt":"Motel Scala","favicon":"assets/images/logo.svg","type":"motel","stars":0,"checkIn":"Sob consulta","checkOut":"Conforme período","receptionHours":"24 horas"},"theme":{"primary":"#4A154B","secondary":"#2E0D30","accent":"#C51B2E","background":"#F5F0F4","surface":"#FFFFFF","text":"#1A0F1C","textMuted":"#6B5A6E","heroOverlay":"rgba(42, 13, 48, 0.68)","fontHeading":"Montserrat","fontBody":"Montserrat","borderRadius":"md","buttonStyle":"pill","sectionBand":true},"seo":{"title":"Motel Scala — Motel em Salvador, BA | Reserve pelo WhatsApp","description":"Motel Scala no Comércio, Salvador. 8 categorias de suítes, restaurante 24h, decorações especiais e reserva rápida pelo WhatsApp. A partir de R$ 127.","keywords":["motel scala","motel salvador","motel comércio salvador","suíte mansão scala","motel ba","reserva motel whatsapp"],"ogImage":"assets/images/og-image.jpg","canonicalUrl":""},"hero":{"title":"Motel Scala","subtitle":"Suítes amplas no Comércio, restaurante 24h e decorações especiais. Reserve agora pelo WhatsApp.","image":"assets/images/hero.jpg","imageMobile":"assets/images/hero-mobile.jpg","cta":{"text":"Reservar pelo WhatsApp","style":"whatsapp"},"badges":["Recepção 24h","Restaurante 24h","8 suítes","Acessível PCD"],"bookingCard":{"enabled":true,"ctaText":"Reservar no WhatsApp","defaultGuests":2,"maxGuests":4,"hideLegacyCtas":true,"roomTypePlaceholder":"Selecione a suíte","showAnyRoomOption":true,"labels":{"roomType":"Tipo de suíte","checkIn":"Data de entrada","checkOut":"Data de saída","guests":"Hóspedes"},"placeholders":{"roomType":"Qual suíte você prefere?","checkIn":"Adicione uma data","checkOut":"Adicione uma data"}}},"trustBar":{"enabled":true,"googleRating":0,"googleReviewsCount":0,"highlights":[{"icon":"clock","label":"Recepção 24h"},{"icon":"service","label":"Restaurante 24h"},{"icon":"parking","label":"Garagem privativa"},{"icon":"wifi","label":"Wi-Fi nas suítes"},{"icon":"users","label":"Suíte PCD"}]},"roomsSection":{"title":"Suítes em destaque","subtitle":"Escolha a suíte ideal para o seu momento"},"rooms":[{"id":"mansao","name":"Suíte Mansão","description":"A maior e mais completa do Scala. Piscina ao ar livre, sauna, churrasqueira e garagem para 2 carros. Ideal também para grupos (suíte executiva acoplada).","photos":["assets/images/rooms/mansao-1.jpg","assets/images/rooms/mansao-2.jpg","assets/images/rooms/mansao-3.jpg","assets/images/rooms/mansao-6.jpg"],"capacity":{"adults":4,"children":0},"bedType":"Casal","sizeM2":0,"amenities":["piscina","sauna","churrasqueira","2 TVs","garagem 2 carros","wi-fi"],"priceFrom":349,"priceLabel":"a partir de","currency":"BRL","featured":true,"ctaText":"Reservar Mansão"},{"id":"loft","name":"Suíte Loft","description":"Ambiente integrado com hidromassagem e 4 temas (50 Tons, Mar Azul, Selva e Festa). Garagem privativa para 2 carros.","photos":["assets/images/rooms/loft-1.jpg","assets/images/rooms/loft-2.jpg","assets/images/rooms/loft-3.jpg"],"capacity":{"adults":2,"children":0},"bedType":"Casal","sizeM2":0,"amenities":["hidro","smart TV","temas","garagem 2 carros","wi-fi"],"priceFrom":255,"priceLabel":"a partir de","currency":"BRL","featured":true,"ctaText":"Reservar Loft"},{"id":"hidro","name":"Suíte Hidro","description":"Suítes amplas com hidromassagem e temas distintos. Algumas unidades com pole dance ou sauna (consulte na reserva).","photos":["assets/images/rooms/hidro-1.jpg","assets/images/rooms/hidro-2.jpg","assets/images/rooms/hidro-3.jpg"],"capacity":{"adults":2,"children":0},"bedType":"Casal","sizeM2":0,"amenities":["hidro","smart TV 32\"","garagem privativa","wi-fi","bluetooth"],"priceFrom":231,"priceLabel":"a partir de","currency":"BRL","featured":true,"ctaText":"Reservar Hidro"},{"id":"premium","name":"Suíte Premium","description":"Conforto e discrição com cama box, smart TV 43\", frigobar e garagem privativa.","photos":["assets/images/rooms/premium-1.jpg","assets/images/rooms/premium-2.jpg","assets/images/rooms/premium-3.jpg"],"capacity":{"adults":2,"children":0},"bedType":"Casal box","sizeM2":0,"amenities":["smart TV 43\"","frigobar","garagem privativa","ar-condicionado"],"priceFrom":179,"priceLabel":"a partir de","currency":"BRL","featured":false,"ctaText":"Reservar Premium"},{"id":"tricolor","name":"Suíte Tricolor","description":"Decoração temática, espelho no teto, iluminação LED e smart TV. Perfeita para torcedores.","photos":["assets/images/rooms/tricolor-1.jpg","assets/images/rooms/tricolor-2.jpg","assets/images/rooms/tricolor-3.jpg"],"capacity":{"adults":2,"children":0},"bedType":"Casal box","sizeM2":0,"amenities":["decoração temática","LED","espelho no teto","smart TV"],"priceFrom":179,"priceLabel":"a partir de","currency":"BRL","featured":false,"ctaText":"Reservar Tricolor"},{"id":"executiva","name":"Suíte Executiva","description":"Ambiente discreto e confortável para um encontro com total segurança.","photos":["assets/images/rooms/executiva-1.jpg","assets/images/rooms/executiva-2.jpg"],"capacity":{"adults":2,"children":0},"bedType":"Casal","sizeM2":0,"amenities":["ar-condicionado","TV 20\"","frigobar","garagem privativa","wi-fi"],"priceFrom":157,"priceLabel":"a partir de","currency":"BRL","featured":false,"ctaText":"Reservar Executiva"},{"id":"pcd","name":"Suíte Especial p/ Cadeirantes","description":"Uma das poucas suítes PCD em Salvador: cama larga e rebaixada, banheiro com barras de apoio e sem box.","photos":["assets/images/rooms/pcd-1.jpg","assets/images/rooms/pcd-2.jpg","assets/images/rooms/pcd-3.jpg"],"capacity":{"adults":2,"children":0},"bedType":"Casal acessível","sizeM2":0,"amenities":["acessibilidade PCD","ar-condicionado","garagem privativa","wi-fi"],"priceFrom":157,"priceLabel":"a partir de","currency":"BRL","featured":false,"ctaText":"Reservar PCD"},{"id":"light","name":"Suíte Light","description":"Opção econômica com conforto e segurança. Ideal para quem quer curtir a experiência sem abrir mão do essencial.","photos":["assets/images/rooms/light-1.jpg","assets/images/rooms/light-2.jpg"],"capacity":{"adults":2,"children":0},"bedType":"Casal","sizeM2":0,"amenities":["ar-condicionado","smart TV","frigobar","wi-fi"],"priceFrom":127,"priceLabel":"a partir de","currency":"BRL","featured":false,"ctaText":"Reservar Light"}],"amenities":[{"id":"reception","icon":"clock","label":"Recepção 24h","enabled":true},{"id":"restaurant","icon":"service","label":"Restaurante 24h","enabled":true},{"id":"wifi","icon":"wifi","label":"Wi-Fi nas suítes","enabled":true},{"id":"parking","icon":"parking","label":"Garagem privativa","enabled":true},{"id":"ac","icon":"ac","label":"Ar-condicionado","enabled":true},{"id":"hidro","icon":"bath","label":"Hidromassagem","enabled":true},{"id":"decor","icon":"star","label":"Decorações especiais","enabled":true},{"id":"pcd","icon":"users","label":"Suíte acessível PCD","enabled":true}],"about":{"enabled":true,"title":"O Motel Scala","text":"Localizado no bairro do Comércio, próximo à orla, no centro de Salvador, o Motel Scala tem suítes amplas e chama atenção pelo ótimo atendimento.\n\nO motel conta com 8 categorias de acomodações — todas com ar-condicionado, frigobar, TV e bluetooth.\n\nÉ um dos únicos motéis da cidade com suíte adaptada para cadeirantes (PCD), com cama larga e rebaixada, banheiro com barras de apoio e sem box.\n\nDestaques: Suíte Loft com 4 temas (50 Tons, Mar Azul, Selva e Festa) e a Suíte Mansão Aruba, a maior e mais completa, com sauna e piscina na área descoberta.","image":"assets/images/about.jpg"},"gastronomy":{"enabled":true,"title":"Gastronomia Scala","subtitle":"Restaurante 24 horas com cardápio para qualquer hora do dia ou da noite.","description":"No Scala Motel, oferecemos uma experiência culinária incomparável. Pratos principais, entradas e sobremesas preparados com qualidade excepcional.","image":"assets/images/gastronomy/hero.jpg","ctaText":"Pedir cardápio no WhatsApp","items":[{"name":"Raviole de queijo brie","image":"assets/images/gastronomy/raviole.jpg"},{"name":"Parmegiana de carne","image":"assets/images/gastronomy/parmegiana-carne.jpg"},{"name":"Parmegiana de frango","image":"assets/images/gastronomy/parmegiana-frango.jpg"},{"name":"Strogonoff de frango","image":"assets/images/gastronomy/strogonoff.jpg","badge":"O mais pedido"},{"name":"Salmão ao molho siciliano","image":"assets/images/gastronomy/salmao.jpg"},{"name":"Cubo de filé mignon acebolado","image":"assets/images/gastronomy/file-mignon.jpg"},{"name":"Brownie de chocolate","image":"assets/images/gastronomy/brownie.jpg"},{"name":"Torta búlgara","image":"assets/images/gastronomy/torta.jpg"}]},"decorations":{"enabled":true,"title":"Decorações","subtitle":"Celebration Day — detalhes que tornam o momento inesquecível.","description":"Reserve uma decoração especial, com direito a vinho e uma refeição feita com carinho.","items":[{"id":"petalas","name":"Pétalas","description":"Surpreenda seu amor com a suíte decorada com pétalas. Romântico e surpreendente.","image":"assets/images/decorations/petalas.jpg","priceFrom":22,"ctaText":"Reservar Pétalas"},{"id":"frases","name":"Pétalas e Frases","description":"Declare-se com uma frase que vai eternizar o momento.","image":"assets/images/decorations/frases.jpg","priceFrom":33,"ctaText":"Reservar Frases"},{"id":"charme","name":"Charme","description":"Pétalas, velas, balão LOVE/TE AMO, bandeja, taças, vinho e balde de gelo.","image":"assets/images/decorations/charme.jpg","priceFrom":132,"ctaText":"Reservar Charme"},{"id":"glamour","name":"Glamour","description":"Pacote completo com fio de fadas, bombons, frase em EVA e lençol de cetim.","image":"assets/images/decorations/glamour.jpg","priceFrom":176,"ctaText":"Reservar Glamour"},{"id":"all-inclusive","name":"All Inclusive","description":"Decoração + entrada + 2 pratos + vinho + sobremesa. Experiência completa.","image":"assets/images/decorations/all-inclusive.jpg","priceFrom":187,"ctaText":"Reservar All Inclusive"}]},"gallery":{"enabled":true,"title":"Galeria","images":[{"src":"assets/images/gallery/01-piscina.jpg","alt":"Área da piscina","category":"areas"},{"src":"assets/images/gallery/02-mansao.jpg","alt":"Suíte Mansão","category":"suites"},{"src":"assets/images/gallery/03-loft.jpg","alt":"Suíte Loft","category":"suites"},{"src":"assets/images/gallery/04-hidro.jpg","alt":"Suíte Hidro","category":"suites"},{"src":"assets/images/gallery/05-gastro.jpg","alt":"Gastronomia Scala","category":"gastro"},{"src":"assets/images/gallery/06-mansao-piscina.jpg","alt":"Piscina da Mansão","category":"suites"},{"src":"assets/images/gallery/07-decoracao.jpg","alt":"Decoração especial","category":"decor"},{"src":"assets/images/gallery/08-loft-tema.jpg","alt":"Loft temático","category":"suites"}]},"promotions":{"enabled":true,"title":"Vantagens e Promoções","items":[{"id":"parceiros-20","title":"20% de desconto","description":"Válido para Sócio Esquadrão (Bahia), Sócios Tricolor (Vitória), Clube Correio e OAB, mediante apresentação da carteirinha/CPF na recepção.","discount":"20%","enabled":true},{"id":"cafe","title":"Café da manhã","description":"Servido todos os dias entre 7h e 10h, para todas as suítes, somente no período de 24h e pernoite.","discount":"","enabled":true},{"id":"aniversario","title":"Especial aniversariantes","description":"Aniversariantes do mês que reservarem Hidro ou Loft por 12h ganham decoração com pétalas, balões e letreiro. Não acumulativo.","discount":"","enabled":true}]},"location":{"enabled":true,"title":"Localização","description":"No Comércio, próximo à orla, no centro de Salvador — fácil acesso pela Av. Frederico Pontes.","lat":-12.9688,"lng":-38.5125,"googleMapsUrl":"https://www.google.com/maps/search/?api=1&query=Motel+Scala+Avenida+Frederico+Pontes+Salvador","uber":{"enabled":true,"label":"Ir de Uber","address":"Av. Frederico Pontes (1ª travessa da Frederico Pontes nº 62), Comércio, Salvador - BA"},"nearby":[{"name":"Orla do Comércio","distance":"próximo","icon":"map"},{"name":"Centro de Salvador","distance":"no bairro","icon":"map"},{"name":"Elevador Lacerda","distance":"região","icon":"map"}]},"reviews":{"enabled":false,"title":"Avaliações dos hóspedes","items":[]},"faq":{"enabled":true,"title":"Perguntas frequentes","items":[{"question":"Como faço uma reserva?","answer":"Pelo WhatsApp (71) 98217-8752 ou pelo formulário desta página. Informe suíte, data e horário desejados."},{"question":"Quais períodos posso reservar?","answer":"Os períodos contratados (4h, 12h ou 24h) são contabilizados a partir do horário de check-in. Valores e disponibilidade pelo WhatsApp."},{"question":"Tem restaurante?","answer":"Sim. Restaurante 24 horas com cardápio completo — entradas, pratos principais e sobremesas."},{"question":"Posso reservar decoração?","answer":"Sim. Temos pacotes de Pétalas, Frases, Charme, Glamour e All Inclusive. Reserve junto com a suíte pelo WhatsApp."},{"question":"Há suíte acessível?","answer":"Sim. A Suíte Especial p/ Cadeirantes possui cama rebaixada, barras de apoio e banheiro sem box."}]},"ctaFinal":{"enabled":true,"title":"Chama o mozão e bora pro Motel Scala","subtitle":"Reserve sua suíte pelo WhatsApp e garanta o melhor momento em Salvador.","backgroundImage":"assets/images/cta-bg.jpg","primaryCta":"Reservar pelo WhatsApp","showPhone":true},"whatsapp":{"number":"5571982178752","showFloatingButton":true,"floatingButtonText":"WhatsApp","stickyMobileBar":false,"messages":{"hero":"Olá! Gostaria de reservar uma suíte no Motel Scala em Salvador.","booking":"Olá! Gostaria de fazer uma reserva no {{hotel.name}}:\n\n📋 Suíte: {{booking.roomType}}\n📅 Entrada: {{booking.checkIn}}\n📅 Saída: {{booking.checkOut}}\n👥 Hóspedes: {{booking.guests}}\n\nPoderia confirmar disponibilidade e valores?","room":"Olá! Tenho interesse na {{room.name}} do Motel Scala. Poderia informar disponibilidade e valores?","promotion":"Olá! Vi uma promoção/vantagem no site do Motel Scala e gostaria de saber mais.","gastronomy":"Olá! Gostaria de ver o cardápio do restaurante do Motel Scala.","decoration":"Olá! Tenho interesse na decoração {{decoration.name}} do Motel Scala. Poderia informar disponibilidade?","footer":"Olá! Vim pelo site do Motel Scala e gostaria de mais informações.","general":"Olá! Gostaria de informações sobre o Motel Scala."}},"sections":{"header":true,"hero":true,"trustBar":true,"rooms":true,"amenities":true,"about":true,"gastronomy":true,"decorations":true,"gallery":true,"promotions":true,"location":true,"reviews":false,"faq":true,"ctaFinal":true,"footer":true},"analytics":{"googleAnalyticsId":"","googleTagManagerId":"","facebookPixelId":""},"navigation":[{"label":"Suítes","href":"#quartos","enabled":true},{"label":"O Motel","href":"#sobre","enabled":true},{"label":"Gastronomia","href":"#gastronomia","enabled":true},{"label":"Decorações","href":"#decoracoes","enabled":true},{"label":"Vantagens","href":"#promocoes","enabled":true},{"label":"Localização","href":"#localizacao","enabled":true},{"label":"Contato","href":"#contato","enabled":true}]};</script>
+  <script src="js/whatsapp.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

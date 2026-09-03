@@ -1,0 +1,712 @@
+{
+  "meta": {
+    "slug": "motel-scala",
+    "language": "pt-BR",
+    "version": "1.0.0"
+  },
+  "hotel": {
+    "name": "Motel Scala",
+    "tagline": "Chama o mozão e bora pro Motel Scala",
+    "city": "Salvador",
+    "state": "BA",
+    "neighborhood": "Comércio",
+    "address": "Av. Frederico Pontes (1ª travessa da Frederico Pontes nº 62)",
+    "zipCode": "40015-140",
+    "phone": "(71) 3416-5000",
+    "whatsapp": "5571982178752",
+    "email": "financeiro@motelscala.com.br",
+    "website": "https://www.motelscala.com.br",
+    "instagram": "https://www.instagram.com/motel_scala/",
+    "facebook": "https://www.facebook.com/motelscala",
+    "logo": "assets/images/logo.svg",
+    "logoAlt": "Motel Scala",
+    "favicon": "assets/images/logo.svg",
+    "type": "motel",
+    "stars": 0,
+    "checkIn": "Sob consulta",
+    "checkOut": "Conforme período",
+    "receptionHours": "24 horas"
+  },
+  "theme": {
+    "primary": "#4A154B",
+    "secondary": "#2E0D30",
+    "accent": "#C51B2E",
+    "background": "#F5F0F4",
+    "surface": "#FFFFFF",
+    "text": "#1A0F1C",
+    "textMuted": "#6B5A6E",
+    "heroOverlay": "rgba(42, 13, 48, 0.68)",
+    "fontHeading": "Montserrat",
+    "fontBody": "Montserrat",
+    "borderRadius": "md",
+    "buttonStyle": "pill",
+    "sectionBand": true
+  },
+  "seo": {
+    "title": "Motel Scala — Motel em Salvador, BA | Reserve pelo WhatsApp",
+    "description": "Motel Scala no Comércio, Salvador. 8 categorias de suítes, restaurante 24h, decorações especiais e reserva rápida pelo WhatsApp. A partir de R$ 127.",
+    "keywords": [
+      "motel scala",
+      "motel salvador",
+      "motel comércio salvador",
+      "suíte mansão scala",
+      "motel ba",
+      "reserva motel whatsapp"
+    ],
+    "ogImage": "assets/images/og-image.jpg",
+    "canonicalUrl": ""
+  },
+  "hero": {
+    "title": "Motel Scala",
+    "subtitle": "Suítes amplas no Comércio, restaurante 24h e decorações especiais. Reserve agora pelo WhatsApp.",
+    "image": "assets/images/hero.jpg",
+    "imageMobile": "assets/images/hero-mobile.jpg",
+    "cta": {
+      "text": "Reservar pelo WhatsApp",
+      "style": "whatsapp"
+    },
+    "badges": [
+      "Recepção 24h",
+      "Restaurante 24h",
+      "8 suítes",
+      "Acessível PCD"
+    ],
+    "bookingCard": {
+      "enabled": true,
+      "ctaText": "Reservar no WhatsApp",
+      "defaultGuests": 2,
+      "maxGuests": 4,
+      "hideLegacyCtas": true,
+      "roomTypePlaceholder": "Selecione a suíte",
+      "showAnyRoomOption": true,
+      "labels": {
+        "roomType": "Tipo de suíte",
+        "checkIn": "Data de entrada",
+        "checkOut": "Data de saída",
+        "guests": "Hóspedes"
+      },
+      "placeholders": {
+        "roomType": "Qual suíte você prefere?",
+        "checkIn": "Adicione uma data",
+        "checkOut": "Adicione uma data"
+      }
+    }
+  },
+  "trustBar": {
+    "enabled": true,
+    "googleRating": 0,
+    "googleReviewsCount": 0,
+    "highlights": [
+      {
+        "icon": "clock",
+        "label": "Recepção 24h"
+      },
+      {
+        "icon": "service",
+        "label": "Restaurante 24h"
+      },
+      {
+        "icon": "parking",
+        "label": "Garagem privativa"
+      },
+      {
+        "icon": "wifi",
+        "label": "Wi-Fi nas suítes"
+      },
+      {
+        "icon": "users",
+        "label": "Suíte PCD"
+      }
+    ]
+  },
+  "roomsSection": {
+    "title": "Suítes em destaque",
+    "subtitle": "Escolha a suíte ideal para o seu momento"
+  },
+  "rooms": [
+    {
+      "id": "mansao",
+      "name": "Suíte Mansão",
+      "description": "A maior e mais completa do Scala. Piscina ao ar livre, sauna, churrasqueira e garagem para 2 carros. Ideal também para grupos (suíte executiva acoplada).",
+      "photos": [
+        "assets/images/rooms/mansao-1.jpg",
+        "assets/images/rooms/mansao-2.jpg",
+        "assets/images/rooms/mansao-3.jpg",
+        "assets/images/rooms/mansao-6.jpg"
+      ],
+      "capacity": {
+        "adults": 4,
+        "children": 0
+      },
+      "bedType": "Casal",
+      "sizeM2": 0,
+      "amenities": [
+        "piscina",
+        "sauna",
+        "churrasqueira",
+        "2 TVs",
+        "garagem 2 carros",
+        "wi-fi"
+      ],
+      "priceFrom": 349,
+      "priceLabel": "a partir de",
+      "currency": "BRL",
+      "featured": true,
+      "ctaText": "Reservar Mansão"
+    },
+    {
+      "id": "loft",
+      "name": "Suíte Loft",
+      "description": "Ambiente integrado com hidromassagem e 4 temas (50 Tons, Mar Azul, Selva e Festa). Garagem privativa para 2 carros.",
+      "photos": [
+        "assets/images/rooms/loft-1.jpg",
+        "assets/images/rooms/loft-2.jpg",
+        "assets/images/rooms/loft-3.jpg"
+      ],
+      "capacity": {
+        "adults": 2,
+        "children": 0
+      },
+      "bedType": "Casal",
+      "sizeM2": 0,
+      "amenities": [
+        "hidro",
+        "smart TV",
+        "temas",
+        "garagem 2 carros",
+        "wi-fi"
+      ],
+      "priceFrom": 255,
+      "priceLabel": "a partir de",
+      "currency": "BRL",
+      "featured": true,
+      "ctaText": "Reservar Loft"
+    },
+    {
+      "id": "hidro",
+      "name": "Suíte Hidro",
+      "description": "Suítes amplas com hidromassagem e temas distintos. Algumas unidades com pole dance ou sauna (consulte na reserva).",
+      "photos": [
+        "assets/images/rooms/hidro-1.jpg",
+        "assets/images/rooms/hidro-2.jpg",
+        "assets/images/rooms/hidro-3.jpg"
+      ],
+      "capacity": {
+        "adults": 2,
+        "children": 0
+      },
+      "bedType": "Casal",
+      "sizeM2": 0,
+      "amenities": [
+        "hidro",
+        "smart TV 32\"",
+        "garagem privativa",
+        "wi-fi",
+        "bluetooth"
+      ],
+      "priceFrom": 231,
+      "priceLabel": "a partir de",
+      "currency": "BRL",
+      "featured": true,
+      "ctaText": "Reservar Hidro"
+    },
+    {
+      "id": "premium",
+      "name": "Suíte Premium",
+      "description": "Conforto e discrição com cama box, smart TV 43\", frigobar e garagem privativa.",
+      "photos": [
+        "assets/images/rooms/premium-1.jpg",
+        "assets/images/rooms/premium-2.jpg",
+        "assets/images/rooms/premium-3.jpg"
+      ],
+      "capacity": {
+        "adults": 2,
+        "children": 0
+      },
+      "bedType": "Casal box",
+      "sizeM2": 0,
+      "amenities": [
+        "smart TV 43\"",
+        "frigobar",
+        "garagem privativa",
+        "ar-condicionado"
+      ],
+      "priceFrom": 179,
+      "priceLabel": "a partir de",
+      "currency": "BRL",
+      "featured": false,
+      "ctaText": "Reservar Premium"
+    },
+    {
+      "id": "tricolor",
+      "name": "Suíte Tricolor",
+      "description": "Decoração temática, espelho no teto, iluminação LED e smart TV. Perfeita para torcedores.",
+      "photos": [
+        "assets/images/rooms/tricolor-1.jpg",
+        "assets/images/rooms/tricolor-2.jpg",
+        "assets/images/rooms/tricolor-3.jpg"
+      ],
+      "capacity": {
+        "adults": 2,
+        "children": 0
+      },
+      "bedType": "Casal box",
+      "sizeM2": 0,
+      "amenities": [
+        "decoração temática",
+        "LED",
+        "espelho no teto",
+        "smart TV"
+      ],
+      "priceFrom": 179,
+      "priceLabel": "a partir de",
+      "currency": "BRL",
+      "featured": false,
+      "ctaText": "Reservar Tricolor"
+    },
+    {
+      "id": "executiva",
+      "name": "Suíte Executiva",
+      "description": "Ambiente discreto e confortável para um encontro com total segurança.",
+      "photos": [
+        "assets/images/rooms/executiva-1.jpg",
+        "assets/images/rooms/executiva-2.jpg"
+      ],
+      "capacity": {
+        "adults": 2,
+        "children": 0
+      },
+      "bedType": "Casal",
+      "sizeM2": 0,
+      "amenities": [
+        "ar-condicionado",
+        "TV 20\"",
+        "frigobar",
+        "garagem privativa",
+        "wi-fi"
+      ],
+      "priceFrom": 157,
+      "priceLabel": "a partir de",
+      "currency": "BRL",
+      "featured": false,
+      "ctaText": "Reservar Executiva"
+    },
+    {
+      "id": "pcd",
+      "name": "Suíte Especial p/ Cadeirantes",
+      "description": "Uma das poucas suítes PCD em Salvador: cama larga e rebaixada, banheiro com barras de apoio e sem box.",
+      "photos": [
+        "assets/images/rooms/pcd-1.jpg",
+        "assets/images/rooms/pcd-2.jpg",
+        "assets/images/rooms/pcd-3.jpg"
+      ],
+      "capacity": {
+        "adults": 2,
+        "children": 0
+      },
+      "bedType": "Casal acessível",
+      "sizeM2": 0,
+      "amenities": [
+        "acessibilidade PCD",
+        "ar-condicionado",
+        "garagem privativa",
+        "wi-fi"
+      ],
+      "priceFrom": 157,
+      "priceLabel": "a partir de",
+      "currency": "BRL",
+      "featured": false,
+      "ctaText": "Reservar PCD"
+    },
+    {
+      "id": "light",
+      "name": "Suíte Light",
+      "description": "Opção econômica com conforto e segurança. Ideal para quem quer curtir a experiência sem abrir mão do essencial.",
+      "photos": [
+        "assets/images/rooms/light-1.jpg",
+        "assets/images/rooms/light-2.jpg"
+      ],
+      "capacity": {
+        "adults": 2,
+        "children": 0
+      },
+      "bedType": "Casal",
+      "sizeM2": 0,
+      "amenities": [
+        "ar-condicionado",
+        "smart TV",
+        "frigobar",
+        "wi-fi"
+      ],
+      "priceFrom": 127,
+      "priceLabel": "a partir de",
+      "currency": "BRL",
+      "featured": false,
+      "ctaText": "Reservar Light"
+    }
+  ],
+  "amenities": [
+    {
+      "id": "reception",
+      "icon": "clock",
+      "label": "Recepção 24h",
+      "enabled": true
+    },
+    {
+      "id": "restaurant",
+      "icon": "service",
+      "label": "Restaurante 24h",
+      "enabled": true
+    },
+    {
+      "id": "wifi",
+      "icon": "wifi",
+      "label": "Wi-Fi nas suítes",
+      "enabled": true
+    },
+    {
+      "id": "parking",
+      "icon": "parking",
+      "label": "Garagem privativa",
+      "enabled": true
+    },
+    {
+      "id": "ac",
+      "icon": "ac",
+      "label": "Ar-condicionado",
+      "enabled": true
+    },
+    {
+      "id": "hidro",
+      "icon": "bath",
+      "label": "Hidromassagem",
+      "enabled": true
+    },
+    {
+      "id": "decor",
+      "icon": "star",
+      "label": "Decorações especiais",
+      "enabled": true
+    },
+    {
+      "id": "pcd",
+      "icon": "users",
+      "label": "Suíte acessível PCD",
+      "enabled": true
+    }
+  ],
+  "about": {
+    "enabled": true,
+    "title": "O Motel Scala",
+    "text": "Localizado no bairro do Comércio, próximo à orla, no centro de Salvador, o Motel Scala tem suítes amplas e chama atenção pelo ótimo atendimento.\n\nO motel conta com 8 categorias de acomodações — todas com ar-condicionado, frigobar, TV e bluetooth.\n\nÉ um dos únicos motéis da cidade com suíte adaptada para cadeirantes (PCD), com cama larga e rebaixada, banheiro com barras de apoio e sem box.\n\nDestaques: Suíte Loft com 4 temas (50 Tons, Mar Azul, Selva e Festa) e a Suíte Mansão Aruba, a maior e mais completa, com sauna e piscina na área descoberta.",
+    "image": "assets/images/about.jpg"
+  },
+  "gastronomy": {
+    "enabled": true,
+    "title": "Gastronomia Scala",
+    "subtitle": "Restaurante 24 horas com cardápio para qualquer hora do dia ou da noite.",
+    "description": "No Scala Motel, oferecemos uma experiência culinária incomparável. Pratos principais, entradas e sobremesas preparados com qualidade excepcional.",
+    "image": "assets/images/gastronomy/hero.jpg",
+    "ctaText": "Pedir cardápio no WhatsApp",
+    "items": [
+      {
+        "name": "Raviole de queijo brie",
+        "image": "assets/images/gastronomy/raviole.jpg"
+      },
+      {
+        "name": "Parmegiana de carne",
+        "image": "assets/images/gastronomy/parmegiana-carne.jpg"
+      },
+      {
+        "name": "Parmegiana de frango",
+        "image": "assets/images/gastronomy/parmegiana-frango.jpg"
+      },
+      {
+        "name": "Strogonoff de frango",
+        "image": "assets/images/gastronomy/strogonoff.jpg",
+        "badge": "O mais pedido"
+      },
+      {
+        "name": "Salmão ao molho siciliano",
+        "image": "assets/images/gastronomy/salmao.jpg"
+      },
+      {
+        "name": "Cubo de filé mignon acebolado",
+        "image": "assets/images/gastronomy/file-mignon.jpg"
+      },
+      {
+        "name": "Brownie de chocolate",
+        "image": "assets/images/gastronomy/brownie.jpg"
+      },
+      {
+        "name": "Torta búlgara",
+        "image": "assets/images/gastronomy/torta.jpg"
+      }
+    ]
+  },
+  "decorations": {
+    "enabled": true,
+    "title": "Decorações",
+    "subtitle": "Celebration Day — detalhes que tornam o momento inesquecível.",
+    "description": "Reserve uma decoração especial, com direito a vinho e uma refeição feita com carinho.",
+    "items": [
+      {
+        "id": "petalas",
+        "name": "Pétalas",
+        "description": "Surpreenda seu amor com a suíte decorada com pétalas. Romântico e surpreendente.",
+        "image": "assets/images/decorations/petalas.jpg",
+        "priceFrom": 22,
+        "ctaText": "Reservar Pétalas"
+      },
+      {
+        "id": "frases",
+        "name": "Pétalas e Frases",
+        "description": "Declare-se com uma frase que vai eternizar o momento.",
+        "image": "assets/images/decorations/frases.jpg",
+        "priceFrom": 33,
+        "ctaText": "Reservar Frases"
+      },
+      {
+        "id": "charme",
+        "name": "Charme",
+        "description": "Pétalas, velas, balão LOVE/TE AMO, bandeja, taças, vinho e balde de gelo.",
+        "image": "assets/images/decorations/charme.jpg",
+        "priceFrom": 132,
+        "ctaText": "Reservar Charme"
+      },
+      {
+        "id": "glamour",
+        "name": "Glamour",
+        "description": "Pacote completo com fio de fadas, bombons, frase em EVA e lençol de cetim.",
+        "image": "assets/images/decorations/glamour.jpg",
+        "priceFrom": 176,
+        "ctaText": "Reservar Glamour"
+      },
+      {
+        "id": "all-inclusive",
+        "name": "All Inclusive",
+        "description": "Decoração + entrada + 2 pratos + vinho + sobremesa. Experiência completa.",
+        "image": "assets/images/decorations/all-inclusive.jpg",
+        "priceFrom": 187,
+        "ctaText": "Reservar All Inclusive"
+      }
+    ]
+  },
+  "gallery": {
+    "enabled": true,
+    "title": "Galeria",
+    "images": [
+      {
+        "src": "assets/images/gallery/01-piscina.jpg",
+        "alt": "Área da piscina",
+        "category": "areas"
+      },
+      {
+        "src": "assets/images/gallery/02-mansao.jpg",
+        "alt": "Suíte Mansão",
+        "category": "suites"
+      },
+      {
+        "src": "assets/images/gallery/03-loft.jpg",
+        "alt": "Suíte Loft",
+        "category": "suites"
+      },
+      {
+        "src": "assets/images/gallery/04-hidro.jpg",
+        "alt": "Suíte Hidro",
+        "category": "suites"
+      },
+      {
+        "src": "assets/images/gallery/05-gastro.jpg",
+        "alt": "Gastronomia Scala",
+        "category": "gastro"
+      },
+      {
+        "src": "assets/images/gallery/06-mansao-piscina.jpg",
+        "alt": "Piscina da Mansão",
+        "category": "suites"
+      },
+      {
+        "src": "assets/images/gallery/07-decoracao.jpg",
+        "alt": "Decoração especial",
+        "category": "decor"
+      },
+      {
+        "src": "assets/images/gallery/08-loft-tema.jpg",
+        "alt": "Loft temático",
+        "category": "suites"
+      }
+    ]
+  },
+  "promotions": {
+    "enabled": true,
+    "title": "Vantagens e Promoções",
+    "items": [
+      {
+        "id": "parceiros-20",
+        "title": "20% de desconto",
+        "description": "Válido para Sócio Esquadrão (Bahia), Sócios Tricolor (Vitória), Clube Correio e OAB, mediante apresentação da carteirinha/CPF na recepção.",
+        "discount": "20%",
+        "enabled": true
+      },
+      {
+        "id": "cafe",
+        "title": "Café da manhã",
+        "description": "Servido todos os dias entre 7h e 10h, para todas as suítes, somente no período de 24h e pernoite.",
+        "discount": "",
+        "enabled": true
+      },
+      {
+        "id": "aniversario",
+        "title": "Especial aniversariantes",
+        "description": "Aniversariantes do mês que reservarem Hidro ou Loft por 12h ganham decoração com pétalas, balões e letreiro. Não acumulativo.",
+        "discount": "",
+        "enabled": true
+      }
+    ]
+  },
+  "location": {
+    "enabled": true,
+    "title": "Localização",
+    "description": "No Comércio, próximo à orla, no centro de Salvador — fácil acesso pela Av. Frederico Pontes.",
+    "lat": -12.9688,
+    "lng": -38.5125,
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Motel+Scala+Avenida+Frederico+Pontes+Salvador",
+    "uber": {
+      "enabled": true,
+      "label": "Ir de Uber",
+      "address": "Av. Frederico Pontes (1ª travessa da Frederico Pontes nº 62), Comércio, Salvador - BA"
+    },
+    "nearby": [
+      {
+        "name": "Orla do Comércio",
+        "distance": "próximo",
+        "icon": "map"
+      },
+      {
+        "name": "Centro de Salvador",
+        "distance": "no bairro",
+        "icon": "map"
+      },
+      {
+        "name": "Elevador Lacerda",
+        "distance": "região",
+        "icon": "map"
+      }
+    ]
+  },
+  "reviews": {
+    "enabled": false,
+    "title": "Avaliações dos hóspedes",
+    "items": []
+  },
+  "faq": {
+    "enabled": true,
+    "title": "Perguntas frequentes",
+    "items": [
+      {
+        "question": "Como faço uma reserva?",
+        "answer": "Pelo WhatsApp (71) 98217-8752 ou pelo formulário desta página. Informe suíte, data e horário desejados."
+      },
+      {
+        "question": "Quais períodos posso reservar?",
+        "answer": "Os períodos contratados (4h, 12h ou 24h) são contabilizados a partir do horário de check-in. Valores e disponibilidade pelo WhatsApp."
+      },
+      {
+        "question": "Tem restaurante?",
+        "answer": "Sim. Restaurante 24 horas com cardápio completo — entradas, pratos principais e sobremesas."
+      },
+      {
+        "question": "Posso reservar decoração?",
+        "answer": "Sim. Temos pacotes de Pétalas, Frases, Charme, Glamour e All Inclusive. Reserve junto com a suíte pelo WhatsApp."
+      },
+      {
+        "question": "Há suíte acessível?",
+        "answer": "Sim. A Suíte Especial p/ Cadeirantes possui cama rebaixada, barras de apoio e banheiro sem box."
+      }
+    ]
+  },
+  "ctaFinal": {
+    "enabled": true,
+    "title": "Chama o mozão e bora pro Motel Scala",
+    "subtitle": "Reserve sua suíte pelo WhatsApp e garanta o melhor momento em Salvador.",
+    "backgroundImage": "assets/images/cta-bg.jpg",
+    "primaryCta": "Reservar pelo WhatsApp",
+    "showPhone": true
+  },
+  "whatsapp": {
+    "number": "5571982178752",
+    "showFloatingButton": true,
+    "floatingButtonText": "WhatsApp",
+    "stickyMobileBar": false,
+    "messages": {
+      "hero": "Olá! Gostaria de reservar uma suíte no Motel Scala em Salvador.",
+      "booking": "Olá! Gostaria de fazer uma reserva no {{hotel.name}}:\n\n📋 Suíte: {{booking.roomType}}\n📅 Entrada: {{booking.checkIn}}\n📅 Saída: {{booking.checkOut}}\n👥 Hóspedes: {{booking.guests}}\n\nPoderia confirmar disponibilidade e valores?",
+      "room": "Olá! Tenho interesse na {{room.name}} do Motel Scala. Poderia informar disponibilidade e valores?",
+      "promotion": "Olá! Vi uma promoção/vantagem no site do Motel Scala e gostaria de saber mais.",
+      "gastronomy": "Olá! Gostaria de ver o cardápio do restaurante do Motel Scala.",
+      "decoration": "Olá! Tenho interesse na decoração {{decoration.name}} do Motel Scala. Poderia informar disponibilidade?",
+      "footer": "Olá! Vim pelo site do Motel Scala e gostaria de mais informações.",
+      "general": "Olá! Gostaria de informações sobre o Motel Scala."
+    }
+  },
+  "sections": {
+    "header": true,
+    "hero": true,
+    "trustBar": true,
+    "rooms": true,
+    "amenities": true,
+    "about": true,
+    "gastronomy": true,
+    "decorations": true,
+    "gallery": true,
+    "promotions": true,
+    "location": true,
+    "reviews": false,
+    "faq": true,
+    "ctaFinal": true,
+    "footer": true
+  },
+  "analytics": {
+    "googleAnalyticsId": "",
+    "googleTagManagerId": "",
+    "facebookPixelId": ""
+  },
+  "navigation": [
+    {
+      "label": "Suítes",
+      "href": "#quartos",
+      "enabled": true
+    },
+    {
+      "label": "O Motel",
+      "href": "#sobre",
+      "enabled": true
+    },
+    {
+      "label": "Gastronomia",
+      "href": "#gastronomia",
+      "enabled": true
+    },
+    {
+      "label": "Decorações",
+      "href": "#decoracoes",
+      "enabled": true
+    },
+    {
+      "label": "Vantagens",
+      "href": "#promocoes",
+      "enabled": true
+    },
+    {
+      "label": "Localização",
+      "href": "#localizacao",
+      "enabled": true
+    },
+    {
+      "label": "Contato",
+      "href": "#contato",
+      "enabled": true
+    }
+  ]
+}
