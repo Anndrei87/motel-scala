@@ -147,6 +147,46 @@ const Render = {
     return typeof logo === 'string' && logo.trim().length > 0;
   },
 
+  usesExternalBooking() {
+    return Boolean(this.config.booking?.enabled && this.config.booking?.url);
+  },
+
+  renderBookingCta({ text, type, id, size = 'sm' }) {
+    const label = text || 'Reservar';
+    const sizeClass = size === 'sm' ? 'btn--sm' : '';
+
+    if (this.usesExternalBooking()) {
+      return `
+        <button type="button"
+                class="btn btn--booking ${sizeClass}"
+                data-booking-redirect
+                data-booking-type="${type || 'general'}"
+                data-booking-id="${id || ''}">
+          ${label}
+        </button>
+      `;
+    }
+
+    const context = type === 'decoration' ? 'decoration'
+      : type === 'promotion' ? 'promotion'
+      : type === 'gastronomy' ? 'gastronomy'
+      : type === 'room' ? 'room'
+      : 'general';
+
+    const dataAttrs = [
+      `data-whatsapp-context="${context}"`,
+      type === 'room' && id ? `data-room-id="${id}"` : '',
+      type === 'decoration' && id ? `data-decoration-id="${id}"` : '',
+      type === 'promotion' && id ? `data-promotion-id="${id}"` : '',
+    ].filter(Boolean).join(' ');
+
+    return `
+      <a href="#" class="btn btn--whatsapp ${sizeClass}" ${dataAttrs}>
+        ${label}
+      </a>
+    `;
+  },
+
   renderHeader() {
     const { hotel, navigation } = this.config;
 
@@ -278,11 +318,12 @@ const Render = {
             <div class="room-card__amenities">${amenities}</div>
             <div class="room-card__footer">
               ${priceHTML}
-              <a href="#" class="btn btn--whatsapp btn--sm"
-                 data-whatsapp-context="room"
-                 data-room-id="${room.id}">
-                ${room.ctaText || 'Reservar'}
-              </a>
+              ${this.renderBookingCta({
+                text: room.ctaText || 'Reservar',
+                type: 'room',
+                id: room.id,
+                size: 'sm',
+              })}
             </div>
           </div>
         </article>
@@ -343,9 +384,12 @@ const Render = {
         </div>
         <div class="gastronomy-feature__content">
           <p>${gastronomy.description || ''}</p>
-          <a href="#" class="btn btn--whatsapp" data-whatsapp-context="gastronomy">
-            ${gastronomy.ctaText || 'Ver cardápio no WhatsApp'}
-          </a>
+          ${this.renderBookingCta({
+            text: gastronomy.ctaText || (this.usesExternalBooking() ? 'Reservar no Tapir Booking' : 'Ver cardápio no WhatsApp'),
+            type: 'gastronomy',
+            id: 'menu',
+            size: 'md',
+          })}
         </div>
       `;
     }
@@ -394,11 +438,12 @@ const Render = {
             <p class="decoration-card__desc">${item.description || ''}</p>
             <div class="decoration-card__footer">
               ${price}
-              <a href="#" class="btn btn--whatsapp btn--sm"
-                 data-whatsapp-context="decoration"
-                 data-decoration-id="${item.id}">
-                ${item.ctaText || 'Reservar'}
-              </a>
+              ${this.renderBookingCta({
+                text: item.ctaText || 'Reservar',
+                type: 'decoration',
+                id: item.id,
+                size: 'sm',
+              })}
             </div>
           </div>
         </article>
@@ -438,11 +483,12 @@ const Render = {
         <h3>${promo.title}</h3>
         <p>${promo.description || ''}</p>
         ${promo.validUntil ? `<small>Válido até ${promo.validUntil}</small>` : ''}
-        <a href="#" class="btn btn--whatsapp"
-           data-whatsapp-context="promotion"
-           data-promotion-id="${promo.id}">
-          Aproveitar promoção
-        </a>
+        ${this.renderBookingCta({
+          text: promo.ctaText || (this.usesExternalBooking() ? 'Aproveitar promoção' : 'Aproveitar promoção'),
+          type: 'promotion',
+          id: promo.id,
+          size: 'md',
+        })}
       </div>
     `).join('');
   },
@@ -568,7 +614,20 @@ const Render = {
     if (bg && ctaFinal.backgroundImage) bg.src = ctaFinal.backgroundImage;
 
     const wa = document.getElementById('cta-final-whatsapp');
-    if (wa) wa.textContent = ctaFinal.primaryCta || 'Falar no WhatsApp';
+    if (wa) {
+      if (this.usesExternalBooking()) {
+        wa.classList.remove('btn--whatsapp');
+        wa.classList.add('btn--booking');
+        wa.removeAttribute('data-whatsapp-context');
+        wa.setAttribute('href', '#');
+        wa.setAttribute('data-booking-redirect', '');
+        wa.setAttribute('data-booking-type', 'cta');
+        wa.setAttribute('data-booking-id', 'final');
+        wa.textContent = ctaFinal.primaryCta || 'Reservar no Tapir Booking';
+      } else {
+        wa.textContent = ctaFinal.primaryCta || 'Falar no WhatsApp';
+      }
+    }
 
     const phone = document.getElementById('cta-final-phone');
     if (phone && ctaFinal.showPhone && hotel.phone) {

@@ -58,12 +58,12 @@
   },
   "hero": {
     "title": "Motel Scala",
-    "subtitle": "Suítes amplas no Comércio, restaurante 24h e decorações especiais. Reserve agora pelo WhatsApp.",
+    "subtitle": "Suítes amplas no Comércio, restaurante 24h e decorações especiais. Reserve pelo Tapir Booking.",
     "image": "assets/images/hero.jpg",
     "imageMobile": "assets/images/hero-mobile.jpg",
     "cta": {
-      "text": "Reservar pelo WhatsApp",
-      "style": "whatsapp"
+      "text": "Reservar agora",
+      "style": "booking"
     },
     "badges": [
       "Recepção 24h",
@@ -71,25 +71,13 @@
       "8 suítes",
       "Acessível PCD"
     ],
-    "bookingCard": {
+    "ctaCard": {
       "enabled": true,
-      "ctaText": "Reservar no WhatsApp",
-      "defaultGuests": 2,
-      "maxGuests": 4,
-      "hideLegacyCtas": true,
-      "roomTypePlaceholder": "Selecione a suíte",
-      "showAnyRoomOption": true,
-      "labels": {
-        "roomType": "Tipo de suíte",
-        "checkIn": "Data de entrada",
-        "checkOut": "Data de saída",
-        "guests": "Hóspedes"
-      },
-      "placeholders": {
-        "roomType": "Qual suíte você prefere?",
-        "checkIn": "Adicione uma data",
-        "checkOut": "Adicione uma data"
-      }
+      "eyebrow": "Reserve agora",
+      "title": "Garanta sua suíte no Tapir Booking",
+      "subtitle": "Escolha a acomodação, finalize a reserva e pague com segurança.",
+      "buttonText": "Reservar agora",
+      "hideLegacyCtas": true
     }
   },
   "trustBar": {
@@ -407,7 +395,7 @@
     "subtitle": "Restaurante 24 horas com cardápio para qualquer hora do dia ou da noite.",
     "description": "No Scala Motel, oferecemos uma experiência culinária incomparável. Pratos principais, entradas e sobremesas preparados com qualidade excepcional.",
     "image": "assets/images/gastronomy/hero.jpg",
-    "ctaText": "Pedir cardápio no WhatsApp",
+    "ctaText": "Reservar no Tapir Booking",
     "items": [
       {
         "name": "Raviole de queijo brie",
@@ -569,9 +557,9 @@
     "enabled": true,
     "title": "Localização",
     "description": "No Comércio, próximo à orla, no centro de Salvador — fácil acesso pela Av. Frederico Pontes.",
-    "lat": -12.9688,
-    "lng": -38.5125,
-    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Motel+Scala+Avenida+Frederico+Pontes+Salvador",
+    "lat": -12.9602436,
+    "lng": -38.5041975,
+    "googleMapsUrl": "https://www.google.com/maps/place/Scala+%7C+Motel+em+Salvador+-+BA/@-12.9602436,-38.5041975,17z/data=!3m1!4b1!4m9!3m8!1s0x716052195355135:0xa3d03578dabcdc2c!5m2!4m1!1i2!8m2!3d-12.9602436!4d-38.5041975!16s%2Fg%2F11b6j7j456?entry=ttu",
     "uber": {
       "enabled": true,
       "label": "Ir de Uber",
@@ -629,10 +617,21 @@
   "ctaFinal": {
     "enabled": true,
     "title": "Chama o mozão e bora pro Motel Scala",
-    "subtitle": "Reserve sua suíte pelo WhatsApp e garanta o melhor momento em Salvador.",
+    "subtitle": "Reserve sua suíte pelo Tapir Booking e garanta o melhor momento em Salvador.",
     "backgroundImage": "assets/images/cta-bg.jpg",
-    "primaryCta": "Reservar pelo WhatsApp",
+    "primaryCta": "Reservar no Tapir Booking",
     "showPhone": true
+  },
+  "booking": {
+    "enabled": true,
+    "url": "https://www.tapirbooking.com.br/motelscala/",
+    "dialog": {
+      "title": "Redirecionamento para reserva",
+      "message": "Você será direcionado ao domínio da Tapir (Tapir Booking) para concluir a reserva e realizar o pagamento com segurança.",
+      "confirmText": "Continuar para o Tapir Booking",
+      "cancelText": "Cancelar",
+      "domainHint": "tapirbooking.com.br"
+    }
   },
   "whatsapp": {
     "number": "5571982178752",

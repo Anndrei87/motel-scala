@@ -4,18 +4,18 @@
 
 (function () {
   async function loadConfig() {
-    // 1. Config injetada no build
+    // 1. Config injetada no build ou no servidor de dev
     if (window.HOTEL_CONFIG) return window.HOTEL_CONFIG;
 
-    // 2. Build estático: config.json ao lado do index
+    // 2. Build estático / dev: config.json ao lado do index
     try {
       const local = await fetch('./config.json');
       if (local.ok) return await local.json();
     } catch (_) { /* segue para fallback de dev */ }
 
-    // 3. Dev: carrega de configs/{slug}.json ou ?hotel=slug
+    // 3. Dev legado: configs/{slug}.json ou ?hotel=slug
     const params = new URLSearchParams(window.location.search);
-    const slug = params.get('hotel') || 'extasy-brotas';
+    const slug = params.get('hotel') || window.HOTEL_SLUG || 'extasy-brotas';
 
     try {
       const res = await fetch(`/configs/${slug}.json`);
@@ -129,11 +129,13 @@
     Render.init(config);
     Booking.init(config);
     WhatsApp.init(config);
+    TapirBooking.init(config);
     TapirAnalytics.init(config);
     initUI(config);
 
-    // Re-bind WhatsApp após render dinâmico dos quartos
+    // Re-bind após render dinâmico
     WhatsApp.init(config);
+    TapirBooking.init(config);
   }
 
   if (document.readyState === 'loading') {
